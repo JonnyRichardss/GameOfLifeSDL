@@ -51,11 +51,14 @@ void GameOfLife::RunGame()
 		{
 			if (CheckNeighbours(cell.GetNeighbours()) == 3)
 			{
-				aliveNext.push_back(cell);
+				auto liveNextPos = std::find(aliveNext.begin(), aliveNext.end(), cell);
+				if (liveNextPos == aliveNext.end())
+					aliveNext.push_back(cell);
 			}
 		}
-		LiveCells = aliveNext;
+		
 	}
+	LiveCells = aliveNext;
 }
 
 void GameOfLife::EnqueueCells()
@@ -70,9 +73,10 @@ void GameOfLife::EnqueueCells()
 		renderer->Enqueue(c);
 	}
 }
-
+static int calls;
 int GameOfLife::CheckNeighbours(std::vector<GoLCell> neighbours)
 {
+	calls++;
 	int output = 0;
 	for(GoLCell neighbour : neighbours)
 	{

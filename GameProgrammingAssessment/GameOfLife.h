@@ -19,9 +19,11 @@ struct GoLCell {
         }
         return output;
     }
+    
     friend bool operator == (GoLCell lhs, GoLCell rhs) {
         return (lhs.x == rhs.x) && (lhs.y == rhs.y);
     }
+    
 };
 class GameOfLife : public GameObject
 {

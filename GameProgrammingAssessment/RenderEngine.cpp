@@ -40,7 +40,7 @@ SDL_Renderer* RenderEngine::GetRenderContext()
 
 void RenderEngine::RenderFrame()
 {
-    SDL_SetRenderDrawColor(renderContext, 0, 0, 0, 0); //backg colour
+    SDL_SetRenderDrawColor(renderContext, 90, 55, 55, 0); //backg colour
     SDL_RenderClear(renderContext);
     // test code
     /*
@@ -58,7 +58,7 @@ void RenderEngine::RenderFrame()
         }
         if (DEBUG_EXTRA_LOGGING) {
             SDL_Rect destrect = *(c->GetDestPos());
-            logging->DebugLog("x" + std::to_string(destrect.x) + " y" + std::to_string(destrect.y) + " w" + std::to_string(destrect.w) + " h" + std::to_string(destrect.h));
+            //logging->DebugLog("x" + std::to_string(destrect.x) + " y" + std::to_string(destrect.y) + " w" + std::to_string(destrect.w) + " h" + std::to_string(destrect.h));
         }
         SDL_RenderCopyEx(renderContext, c->GetTexture(), c->GetSourcePos(), c->GetDestPos(), c->GetAngle(), c->GetCentrePoint(), c->GetFlip());
     }

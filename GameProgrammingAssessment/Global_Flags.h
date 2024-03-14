@@ -1,6 +1,6 @@
 #ifndef USE_GAMEGLOBALS
 #define USE_GAMEGLOBALS
-constexpr int FRAME_CAP = 5;
+constexpr int FRAME_CAP = 2;
 
 constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
@@ -22,7 +22,7 @@ constexpr bool DO_FILE_LOGGING = true;
 constexpr bool DO_BATCH_LOGGING = true;
 constexpr bool VERBOSE_CONSOLE = false;
 
-constexpr bool DO_PROFILING = false;
+constexpr bool DO_PROFILING = true;
 
 constexpr bool AUDIO_FAILURE_FATAL = true;
 
