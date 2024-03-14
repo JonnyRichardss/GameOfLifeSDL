@@ -52,6 +52,14 @@ void RenderEngine::RenderFrame()
     */
     std::sort(RenderQueue.begin(),RenderQueue.end(), [](auto a, auto b){return *a < *b;});
     for (RenderableComponent* c : RenderQueue) {
+        if (c == nullptr) {
+            logging->Log("Render engine received bad RenderableComponent!");
+            continue;
+        }
+        if (DEBUG_EXTRA_LOGGING) {
+            SDL_Rect destrect = *(c->GetDestPos());
+            logging->DebugLog("x" + std::to_string(destrect.x) + " y" + std::to_string(destrect.y) + " w" + std::to_string(destrect.w) + " h" + std::to_string(destrect.h));
+        }
         SDL_RenderCopyEx(renderContext, c->GetTexture(), c->GetSourcePos(), c->GetDestPos(), c->GetAngle(), c->GetCentrePoint(), c->GetFlip());
     }
     RenderQueue.clear();

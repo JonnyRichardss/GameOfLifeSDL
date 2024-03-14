@@ -42,6 +42,8 @@ void GameEngine::StartLoop()
 {
      GameScene* boidScene = new BoidScene();
      AllScenes.push_back(boidScene);
+     GameScene* GOLScene = new GameOfLifeScene();
+     AllScenes.push_back(GOLScene);
      GameScene* eshopScene = new EshopScene();
      AllScenes.push_back(eshopScene);
 

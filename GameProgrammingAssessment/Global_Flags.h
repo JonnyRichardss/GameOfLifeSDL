@@ -1,13 +1,13 @@
 #ifndef USE_GAMEGLOBALS
 #define USE_GAMEGLOBALS
-constexpr int FRAME_CAP = 60;
+constexpr int FRAME_CAP = 5;
 
 constexpr int WINDOW_WIDTH = 800;
 constexpr int WINDOW_HEIGHT = 600;
-constexpr int GAME_MAX_X = 1000;
-constexpr int GAME_MAX_Y = 1000;
+constexpr int GAME_MAX_X = 20;
+constexpr int GAME_MAX_Y = 20;
 
-constexpr int SPLASH_SCREEN_DURATION = 4;
+constexpr int SPLASH_SCREEN_DURATION = 1;
 static const char* LOG_FOLDER_PATH = "Logs/";
 static const char* LOGFILE_NAME = "latest.log";
 
@@ -22,7 +22,7 @@ constexpr bool DO_FILE_LOGGING = true;
 constexpr bool DO_BATCH_LOGGING = true;
 constexpr bool VERBOSE_CONSOLE = false;
 
-constexpr bool DO_PROFILING = true;
+constexpr bool DO_PROFILING = false;
 
 constexpr bool AUDIO_FAILURE_FATAL = true;
 
